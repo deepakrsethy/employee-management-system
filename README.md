@@ -38,4 +38,5 @@ class Department {
 }
 
 Employee "1" --> "1" Address
+
 Department "1" --> "*" Employee
