@@ -72,6 +72,29 @@ spring:
         format_sql: true
         show_sql: true
 
+### Setup
+1. Clone the repository:
+```
+git clone https://github.com/your-username/employee-management-system.git
+cd employee-management-system
+```
+   
+2. Configure the database in application.properties:
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/ems
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
+```
+ 
+
+3. Build and run the application:
+```
+mvn clean install
+mvn spring-boot:run
+```
+   
+
 ### 🔄 API Endpoints
 👤 Employees
 
@@ -96,6 +119,32 @@ com.drs.ems
 ├── enums            # Enum definitions (e.g., DepartmentNames)
 └── util             # Utility classes (e.g., DTO builders)
 ```
+
+### 📘 Class Diagram Overview
+```plaintext
++------------------+          +------------------+         +------------------+
+|   Department     |◄────────▶|     Employee     |◄───────▶|     Address      |
++------------------+          +------------------+         +------------------+
+| - id: Long       |          | - id: Long       |         | - id: UUID       |
+| - departmentName |          | - name: String   |         | - addressLine1   |
+|                  |          | - designation    |         | - addressLine2   |
+|                  |          | - gender         |         | - city           |
+|                  |          | - email          |         | - state          |
+|                  |          | - salary         |         | - country        |
+|                  |          | - joiningDate    |         | - pinCode        |
+|                  |          | - phoneNumber    |         +------------------+
+|                  |          | - department     |
+|                  |          | - address        |
++------------------+          +------------------+
+```
+  #### 🎯 Key Relationships:
+    One Department → Many Employees (@OneToMany)
+
+    Many Employees → One Department (@ManyToOne)
+
+    One Employee → One Address (@OneToOne)
+
+
 ### 🔐 Future Enhancements
 Spring Security for authentication & authorization
 
