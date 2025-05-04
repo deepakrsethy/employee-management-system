@@ -39,6 +39,7 @@ A full-stack Java-based Employee Management System (EMS) for managing employee d
 - PostgreSQL 13+
 - Maven 3.6+
 - (Optional) Docker
+- Gitlab pipeline 
 
 ### Database Setup
 
