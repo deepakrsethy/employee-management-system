@@ -28,6 +28,8 @@ public class EmployeeResponse {
 
     private Long departmentId;
 
+    private String departmentName;
+
     private Double salary;
 
     private LocalDate joiningDate;

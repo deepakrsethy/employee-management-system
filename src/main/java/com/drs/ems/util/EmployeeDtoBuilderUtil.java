@@ -1,5 +1,6 @@
 package com.drs.ems.util;
 
+import com.drs.ems.entity.Address;
 import com.drs.ems.entity.Employee;
 import com.drs.ems.model.EmployeeResponse;
 
@@ -18,7 +19,8 @@ public class EmployeeDtoBuilderUtil {
                 .salary(employee.getSalary())
                 .departmentId(employee.getDepartment().getId())
                 .joiningDate(employee.getJoiningDate())
-                .addressId(employee.getAddress().getId().toString())
+                .addressId(String.valueOf(employee.getAddress().getId()))
+                .departmentName(employee.getDepartment().getDepartmentName())
                 .build();
     }
 
